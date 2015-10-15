@@ -1,0 +1,213 @@
+/*---- fonts ----*/
+@import url(https://fonts.googleapis.com/css?family=Vollkorn);
+
+/*---- reset ----*/
+*{margin: 0; padding:0;}
+a{text-decoration: none;}
+ul{list-style: none;}
+
+/*---- common styles ----*/
+$fontSansSerif: helvetica, arial;
+$fontSerif: 'Vollkorn', serif;
+
+$red: #b11b00;
+$green: #4ed49b;
+$green2: #95d0b0;
+$green-soft: #d5ebdf;
+
+/*---- grid ----*/
+$col-lg-14: 14%;
+$col-lg-21: 21%;
+$col-lg-23: 23%;
+$col-lg-25: 25%;
+$col-lg-30: 30%; 
+$col-lg-32: 32%;
+$col-lg-35: 35%; 
+$col-lg-45: 45%; 
+$col-lg-46: 46%;
+$col-lg-50: 50%;
+$col-lg-60: 60%; 
+$col-lg-65: 65%; 
+$col-lg-75: 75%;
+$col-lg-80: 80%;
+$col-lg-85: 85%;
+$col-lg-92: 92%;
+$col-lg-100: 100%; 
+
+@mixin round-border($width, $color, $border-size){
+	width: $width;
+	height: $width;
+	border: {
+		radius: $width;
+		color: $color;
+		width: $border-size;
+    	style: solid;
+	}
+}
+
+body{font-family: $fontSansSerif; background: url("../images/background.jpg") no-repeat center center;}
+.hide{display:none;}
+.no-pad-t{padding-top: 0!important;}
+.title-more{text-transform:uppercase; margin-bottom:20px;}
+
+/*---- header ----*/
+header{background-color: #000; overflow: hidden; width: $col-lg-100;
+	#hold-header-content{margin: 0 auto; width: $col-lg-60;}
+	h1{float: left; width: $col-lg-25;
+		a{background: url("../images/logo.png") no-repeat center center; display:block; text-indent: -9999999px; overflow:hidden; margin-top: 12px;}
+	}
+	nav li{float: left; height: 61px; width: $col-lg-14; overflow: hidden;
+		a{color: #fff; margin-top:14px; position: relative; text-transform: uppercase; font-weight: bold; font-size: 75%; display: block; border-left:1px solid $green2; height: 37px;
+			span{position: absolute; bottom: 0; left:5px;}
+		}
+	}
+	nav li a:last-child{border-right: 1px solid #fff}
+	nav li.current{background-color: $green;}
+	nav li.current a{ color:000;}
+}
+
+/*---- banner and title ----*/
+#hold-title-page{width: $col-lg-100; overflow: hidden; height: 170px; position: relative;
+	img{width: 100%; position: absolute; bottom:0;}
+	.center-content{ width: $col-lg-50; margin-left: auto; margin-right: auto; left: 0; right: 0;
+		.title-page{ color: #fff; text-transform: uppercase; position: absolute; bottom: 10px;
+			h2{font-size: 3em}
+			.black-title{color: #000; font-weight: normal}
+		}
+	}
+}
+.banner-size2{height: 270px!important;}
+.banner-size3{height: 480px!important;}
+
+/*--- hold-body-content ----*/
+#hold-body-content{width: $col-lg-50; border-top: 7px solid $red; margin: 0 auto; padding-bottom:50px;
+	.captalized-text{text-transform: uppercase; font-size: 6em; display: block; float: left; margin: 0 10px -34px 0;}
+}
+
+#hold-body-content.grid1{
+	background-color: #fff; overflow: hidden;
+	.text-content{ width: $col-lg-75; margin: 0 auto; font-family: $fontSerif; font-size: 1.2em; }
+}
+
+#hold-body-content.grid2{
+	padding-top: 50px; background-color: #fff; overflow: hidden;
+	.text-content{ width: $col-lg-65; float: left; font-family: $fontSerif; font-size: 1.2em;}
+	.sidebar-content{width: $col-lg-30; float: right; text-align: right;}
+}
+
+.hold-index-content{
+	float: left; width: $col-lg-32;
+	.float-indexes{
+		border-top: 3px solid $red; padding-right: 1%; padding-left: 1%; padding-top:10px; padding-bottom: 10px; margin-bottom: 20px;
+		.text{margin-bottom: 10px; font-size: 0.8em; font-weight: bold;}
+		a{color: #000;}
+		ul{ margin-top: 10px;
+			li{text-transform: uppercase; font-weight: bold; font-size: 0.9em; position: relative;
+				i{color: $red}
+			}
+		}
+		&:hover{background-color: #000; border-top:3px solid $green2; color: #fff;
+			a{color: #fff;}
+			i{color: $green2}
+		}
+	}
+	&:nth-child(odd){margin: 0 2%; }
+}
+
+.paper{
+	h3{font-family: $fontSansSerif; font-size: 1.3em; font-weight: normal}
+	.author{border-bottom: 1px solid #000; padding: 25px 0; font-weight: bold; margin-bottom: 25px; font-family: $fontSansSerif; font-size: 1.3em;}
+	.pretext{text-transform: uppercase; margin-bottom: 25px; font-family: $fontSansSerif; font-size: 1.3em;}
+}
+
+/*---- menu sidebar ----*/
+.menu-sidebar{background-color: $green-soft; padding: 0 10px; text-align: left;
+	li{
+		border-bottom: 2px dotted #000; padding: 15px 0; overflow: hidden;
+		h4{text-transform: uppercase;}
+		.download-button{background-color: #000; padding: 20px 10px 10px 10px; display: block; width: $col-lg-92; overflow: hidden; color: #fff;
+			span{text-transform: uppercase; float: left; font-size: 1.5em}
+			i{color: #fff; float: right; font-size: 4em;}
+		}
+		.photo-animal{@include round-border(120px, #000, 2px); overflow: hidden; text-align: center; position: relative; float: left;
+			img{width: 180px; position: absolute; left: -20px}
+		}
+		&:last-child{border:none}
+	}
+}
+
+/*---- submenu index researches ----*/
+.submenu1{ padding: 0 10px;
+	> li{ border-right: 1px solid #000; float: left; width: $col-lg-23; padding: 10px 7px 3px 7px; position: relative; margin: -35px 0 30px 0;
+		i{float: right; font-size: 2em;}
+		&:hover{background-color: #000; color: $green}
+		&:first-child{border-left: 1px solid #000;}
+		span{text-transform: uppercase; font-weight: bold; font-size: 1.1em;}
+		ul{position: absolute; top: 37px; left: -1px; background-color: #000; width: 95%; padding: 10px 3%;
+			li{
+				color: #fff; text-transform: uppercase; font-size: 0.8em; padding: 2px 0;
+				&:first-child{border-top: 2px solid $green; padding-top: 10px;}
+				a{float: right; color: $green;
+					i{font-size: 1.2em}
+				}
+			}
+		}
+	}
+}
+
+/*---- photos gallery ----*/
+.float-galleries{
+	border:2px solid #000; width: $col-lg-46; margin-bottom:25px; padding:10px;
+	&:hover{background-color: #000;
+		a{color: #fff;}
+	}
+	a{color: #000}
+	&:nth-child(odd){float: right;}
+	&:nth-child(even){float: left;}
+	.title{float: left; text-transform: uppercase; font-weight:bold; margin-bottom:10px; margin-right:10px;}
+	span{float: left; display: block; padding-top:1px;}
+	img{clear: both; display: block; width:100%;}
+}
+
+#hold-slider{
+	h4{background-color:#000; padding: 20px; width:100%; margin-bottom:2px; text-transform:uppercase; color:#fff; font-size:2em;}
+	.legend{background-color:#000;padding: 20px; color:#fff; margin:2px 0 30px 0; overflow:hidden;
+		p{float: left; width: $col-lg-65; font-size:0.9em}
+	}
+	.controls{
+		float: right;
+		a{float:left;
+			i{font-size:3em; color: $green2}
+		}
+		.count{float: left; width:70px; margin-left:20px; padding-top:15px;}
+		
+	}
+}
+
+/*---- research institutes ----*/
+.hold-all-institutes{
+	padding-bottom: 60px; overflow: hidden;
+	h5{text-transform: uppercase; font-size: 1.2em; border-bottom: 2px solid #000; margin-bottom: 40px;
+		span{font-weight: normal;}
+	}
+}
+
+.hold-researcher{
+	width: $col-lg-21; text-align: center; font-weight: bold; float: left; margin-right: 5%;
+	.photo{@include round-border(200px, #000, 3px); overflow: hidden; text-align: center; position: relative; float: left; margin-bottom: 10px;
+		img{width: 580px; position: absolute; left: -196px; top: -63px;}
+	}
+	p{font-size: 1.2em;}
+	a{text-decoration: underline; color: $green; text-transform: uppercase; font-size: 1.0em;}
+	&:last-child{margin: 0}
+}
+
+/*---- media query responsive ----*/
+
+@media only screen and (min-width: 600px) and (max-width: 1300px) {
+	header{
+		#hold-header-content {width: $col-lg-85;}
+	}
+	.center-content{width: $col-lg-75 !important;}
+	#hold-body-content{width: $col-lg-75;}
+}
