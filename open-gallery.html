@@ -35,16 +35,25 @@
 			<h4>King George Island</h4>
 
 			<div id="slider">
-				<div id="img1">
-					<img src="images/photo-gallery.jpg" />
-					<div class="legend">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lobortis tincidunt tortor id elementum. Donec condimentum felis</p>
 
-						<div class="controls">
-							<a href="#"><i class="fa fa-chevron-circle-left"></i></a>
-							<p class="count">1 de 21</p>
-							<a href="#"><i class="fa fa-chevron-circle-right"></i></a>
-						</div>
+				<div class="hold-images" id="img0">
+					<img src="images/photo-gallery.jpg" />
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lobortis tincidunt tortor id elementum. Donec condimentum felis</p>
+				</div><!-- img0-->
+				<div class="hold-images hide" id="img1">
+					<img src="images/photo-gallery-1.jpg" />
+					<p>2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lobortis tincidunt tortor id elementum. Donec condimentum felis</p>
+				</div><!--img1-->
+				<div class="hold-images hide" id="img2">
+					<img src="images/photo-gallery-2.jpg" />
+					<p>3Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lobortis tincidunt tortor id elementum. Donec condimentum felis</p>
+				</div><!--img3-->
+
+				<div class="legend">
+					<div class="controls">
+						<a href="#" class="previous"><i class="fa fa-chevron-circle-left"></i></a>
+						<p class="count"><span class="current">1</span> de <span class="total"></span></p>
+						<a href="#" class="next"><i class="fa fa-chevron-circle-right"></i></a>
 					</div>
 				</div>
 			</div>
@@ -82,5 +91,8 @@
 	</div><!-- hold-header-content -->
 	<footer>
 	</footer>
+
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/slider.js"></script>
 </body>
 </html>

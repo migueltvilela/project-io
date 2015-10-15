@@ -318,16 +318,20 @@ header {
   text-transform: uppercase;
   color: #fff;
   font-size: 2em; }
+#hold-slider #slider {
+  position: relative; }
+#hold-slider .hold-images p {
+  width: 65%;
+  font-size: 0.9em;
+  color: #fff;
+  position: absolute;
+  padding: 15px 0 0 15px; }
 #hold-slider .legend {
   background-color: #000;
   padding: 20px;
   color: #fff;
   margin: 2px 0 30px 0;
   overflow: hidden; }
-  #hold-slider .legend p {
-    float: left;
-    width: 65%;
-    font-size: 0.9em; }
 #hold-slider .controls {
   float: right; }
   #hold-slider .controls a {
