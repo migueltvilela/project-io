@@ -3,6 +3,7 @@
 	<title>Antartic Microbes</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
+	<link rel="stylesheet" href="cartodb/cartodb.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
@@ -51,6 +52,9 @@
 				<ul>
 					<li>
 						<h4>Collect places</h4>
+						<div class="hold-map">
+							<div id="map"></div>
+						</div>
 					</li>
 					<li>
 						<h4>Subject</h4>
@@ -69,13 +73,6 @@
 						<p>Instituto Oceanográfico</p>
 					</li>
 					<li>
-						<h4>Primary investigator</h4>
-						<div class="photo-animal">
-							<img src="images/foto-foca.jpg" alt="" />
-						</div>
-						<p>Instituto Oceanográfico</p>
-					</li>
-					<li>
 						<a href="#" class="download-button">
 							<span>Download <br>paper</span>
 							<i class="fa fa-angle-double-down"></i>
@@ -87,5 +84,9 @@
 	</div><!-- hold-header-content -->
 	<footer>
 	</footer>
+	<!-- include cartodb.js library -->
+    <script src="cartodb/cartodb_3.15.8.js"></script>
+
+    <script src="js/main_map.js"></script>
 </body>
 </html>

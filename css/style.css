@@ -27,6 +27,14 @@ body {
   text-transform: uppercase;
   margin-bottom: 20px; }
 
+.hold-map {
+  margin-bottom: 50px; }
+
+#map {
+  height: 100%;
+  padding: 0;
+  margin: 0; }
+
 /*---- header ----*/
 header {
   background-color: #000;
@@ -69,6 +77,16 @@ header {
     background-color: #4ed49b; }
   header nav li.current a {
     color: 000; }
+
+/*---- home ----*/
+#home-title {
+  left: 22%; }
+  #home-title h2 {
+    background: url("../images/title-home.png") no-repeat center center;
+    text-indent: -9999999px;
+    overflow: hidden;
+    width: 690px;
+    height: 90px; }
 
 /*---- banner and title ----*/
 #hold-title-page {
@@ -200,9 +218,15 @@ header {
   .menu-sidebar li {
     border-bottom: 2px dotted #000;
     padding: 15px 0;
-    overflow: hidden; }
+    overflow: hidden;
+    /*.photo-animal{@include round-border(120px, #000, 2px); overflow: hidden; text-align: center; position: relative; float: left; z-index:1;
+    	img{width: 180px; position: absolute; left: -20px; z-index:0;}
+    }*/ }
     .menu-sidebar li h4 {
       text-transform: uppercase; }
+    .menu-sidebar li .hold-map {
+      height: 280px;
+      margin: 10px 0 0 0; }
     .menu-sidebar li .download-button {
       background-color: #000;
       padding: 20px 10px 10px 10px;
@@ -218,21 +242,6 @@ header {
         color: #fff;
         float: right;
         font-size: 4em; }
-    .menu-sidebar li .photo-animal {
-      width: 120px;
-      height: 120px;
-      border-radius: 120px;
-      border-color: #000;
-      border-width: 2px;
-      border-style: solid;
-      overflow: hidden;
-      text-align: center;
-      position: relative;
-      float: left; }
-      .menu-sidebar li .photo-animal img {
-        width: 180px;
-        position: absolute;
-        left: -20px; }
     .menu-sidebar li:last-child {
       border: none; }
 

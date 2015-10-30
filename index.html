@@ -3,6 +3,7 @@
 	<title>Antartic Microbes</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="cartodb/cartodb.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 <body>
@@ -23,13 +24,15 @@
 	<div id="hold-title-page">
 		<img src="images/banner-rede-microbiologia.jpg" />
 		<div class="center-content">
-			<div class="title-page">
-				<h2>Antartic Microbes</h2>
-				<h3>Results of brazilian Antartic program | 1998/2014</h3>
+			<div class="title-page" id="home-title">
+				<h2>Antartic Microbes - Results of brazilian Antartic program | 1998/2014</h2>
 			</div><!-- title-page -->
 		</div>
 	</div><!-- hold-title-page -->
 	<div id="hold-body-content" class="grid1">
+		<div class="hold-map">
+			<div id="map"></div>
+		</div>
 		<div class="text-content">
 			<span class="captalized-text">L</span>orem ipsum dolor sit amet, consectetur adipiscing elit. Proin lobortis tincidunt tortor id elementum. Donec condimentum felis sed eros blandit posuere. Maecenas convallis scelerisque placerat. Proin tincidunt arcu et tristique facilisis. Integer eu varius nulla, vulputate viverra lorem. Duis dapibus convallis turpis, molestie lacinia urna eleifend ac. Pellentesque a venenatis est. Aliquam quis lacus mollis, pellentesque velit vulputate, sagittis nisl. Aenean viverra erat non felis sagittis, nec aliquam est malesuada. Ut eu dignissim nisi. Etiam ac massa sem. In fringilla molestie mi id tempus. Proin iaculis elit vitae nulla tincidunt dapibus. Nulla non erat vitae est congue rutrum ut eget elit. Suspendisse consequat risus nec ex iaculis vehicula.
 
@@ -44,5 +47,10 @@
 	</div><!-- hold-header-content -->
 	<footer>
 	</footer>
+
+	<!-- include cartodb.js library -->
+    <script src="cartodb/cartodb_3.15.8.js"></script>
+
+    <script src="js/main_map.js"></script>
 </body>
 </html>
