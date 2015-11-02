@@ -70,23 +70,25 @@ header {
       header nav li a span {
         position: absolute;
         bottom: 0;
-        left: 5px; }
+        left: 5px;
+        width: 30%; }
   header nav li a:last-child {
     border-right: 1px solid #fff; }
   header nav li.current {
     background-color: #4ed49b; }
   header nav li.current a {
     color: 000; }
+  header #btn-small-menu {
+    display: none; }
 
 /*---- home ----*/
 #home-title {
-  left: 22%; }
-  #home-title h2 {
-    background: url("../images/title-home.png") no-repeat center center;
-    text-indent: -9999999px;
-    overflow: hidden;
-    width: 690px;
-    height: 90px; }
+  transform: translate(-50%, -50%);
+  left: 50% !important; }
+  #home-title img {
+    width: 100%;
+    height: auto;
+    position: relative !important; }
 
 /*---- banner and title ----*/
 #hold-title-page {
@@ -329,6 +331,8 @@ header {
   font-size: 2em; }
 #hold-slider #slider {
   position: relative; }
+#hold-slider .hold-images img {
+  width: 100%; }
 #hold-slider .hold-images p {
   width: 65%;
   font-size: 0.9em;
@@ -348,6 +352,9 @@ header {
     #hold-slider .controls a i {
       font-size: 3em;
       color: #95d0b0; }
+    #hold-slider .controls a .mobile-arrow {
+      display: none;
+      color: #fff; }
   #hold-slider .controls .count {
     float: left;
     width: 70px;
@@ -373,9 +380,10 @@ header {
   float: left;
   margin-right: 5%; }
   .hold-researcher .photo {
-    width: 200px;
-    height: 200px;
-    border-radius: 200px;
+    width: 90%;
+    height: auto;
+    padding-top: 90%;
+    border-radius: 90%;
     border-color: #000;
     border-width: 3px;
     border-style: solid;
@@ -400,14 +408,120 @@ header {
     margin: 0; }
 
 /*---- media query responsive ----*/
-@media only screen and (min-width: 600px) and (max-width: 1300px) {
+@media only screen and (min-width: 995px) and (max-width: 1300px) {
   header #hold-header-content {
     width: 85%; }
+
+  #home-title {
+    transform: translate(-27%, -50%);
+    left: 35% !important; }
 
   .center-content {
     width: 75% !important; }
 
   #hold-body-content {
     width: 75%; } }
+@media only screen and (min-width: 320px) and (max-width: 994px) {
+  header {
+    padding-bottom: 15px; }
+    header h1 {
+      width: 45%; }
+      header h1 a {
+        background-position: center left; }
+    header #hold-header-content {
+      width: 92%; }
+    header nav {
+      position: absolute;
+      right: 0;
+      top: 10px;
+      z-index: 1;
+      width: 50%; }
+      header nav ul {
+        background-color: #000;
+        display: none; }
+        header nav ul li {
+          width: 100%;
+          float: none !important;
+          height: auto !important;
+          border-top: 1px solid #95d0b0; }
+          header nav ul li a {
+            border-right: 0 !important;
+            border-left: 0;
+            margin: 0 0 15px 0; }
+            header nav ul li a span {
+              width: 85%;
+              left: 15px; }
+          header nav ul li:first-child a {
+            margin-top: 0; }
+          header nav ul li:last-child {
+            border-bottom: 1px solid #4ed49b;
+            margin-bottom: 0; }
+
+  #hold-title-page .center-content .title-page h2 {
+    font-size: 2.5em; }
+
+  #btn-small-menu {
+    display: block !important;
+    margin: 3px 10% 15px 0;
+    float: right; }
+    #btn-small-menu i {
+      color: #4ed49b;
+      font-size: 36px; }
+
+  #home-title {
+    transform: translate(-12%, -50%);
+    left: 19% !important; }
+
+  .center-content {
+    width: 92% !important; }
+
+  #hold-body-content {
+    width: 92%; }
+
+  #hold-body-content.grid1 .text-content {
+    width: 92%; }
+
+  .banner-size3, .banner-size2 {
+    height: 170px !important; }
+
+  .desktop-arrow {
+    display: none !important; }
+
+  .mobile-arrow {
+    display: block !important;
+    font-size: 112px !important; }
+
+  .next {
+    position: absolute;
+    top: 25%;
+    right: 20px; }
+
+  .previous {
+    position: absolute;
+    top: 25%;
+    left: 20px; }
+
+  .count {
+    position: absolute;
+    top: -58px;
+    right: 0px; }
+
+  .hold-images p {
+    margin-bottom: 20px;
+    width: 92% !important; }
+
+  #hold-slider h4 {
+    font-size: 1.2em; }
+
+  .legend {
+    padding-bottom: 60px !important; } }
+@media only screen and (min-width: 320px) and (max-width: 799px) {
+  .hold-index-content {
+    width: 100%; }
+
+  .float-galleries {
+    width: 92%; }
+    .float-galleries:nth-child(odd) {
+      float: none; } }
 
 /*# sourceMappingURL=style.css.map */
