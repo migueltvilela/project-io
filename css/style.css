@@ -88,7 +88,8 @@ header {
   #home-title img {
     width: 100%;
     height: auto;
-    position: relative !important; }
+    position: relative !important;
+    margin-top: -38px; }
 
 /*---- banner and title ----*/
 #hold-title-page {
