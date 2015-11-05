@@ -79,7 +79,7 @@ header{background-color: #000; overflow: hidden; width: $col-lg-100;
 	img{width:100%; height:auto; position: relative!important;}
 }
 /*---- banner and title ----*/
-#hold-title-page{width: $col-lg-100; overflow: hidden; height: 170px; position: relative;
+#hold-title-page{width: $col-lg-100; overflow: hidden; height: 45%; position: relative;
 	img{width: 100%; position: absolute; bottom:0;}
 	.center-content{ width: $col-lg-50; margin-left: auto; margin-right: auto; left: 0; right: 0;
 		.title-page{ color: #fff; text-transform: uppercase; position: absolute; bottom: 10px;
@@ -88,8 +88,8 @@ header{background-color: #000; overflow: hidden; width: $col-lg-100;
 		}
 	}
 }
-.banner-size2{height: 270px!important;}
-.banner-size3{height: 480px!important;}
+.banner-size2{height: 70%!important;}
+.banner-size3{height: 110%!important;}
 
 /*--- hold-body-content ----*/
 #hold-body-content{width: $col-lg-50; border-top: 7px solid $red; margin: 0 auto; padding-bottom:50px;
@@ -169,7 +169,9 @@ header{background-color: #000; overflow: hidden; width: $col-lg-100;
 		}
 	}
 }
-#filter-others{float: right; color:#000; text-transform: uppercase; margin-top: -20px;}
+#filter-others{float: right; color: #fff; text-transform: uppercase; margin-top: -31px; background-color: #000; padding: 10px;
+	i{width:15px; height: 15px;}
+}
 
 /*---- photos gallery ----*/
 .float-galleries{
@@ -231,12 +233,13 @@ header{background-color: #000; overflow: hidden; width: $col-lg-100;
 	#home-title{ transform: translate(-27%, -50%); left: 35% !important;}
 	.center-content{width: $col-lg-85 !important;}
 	#hold-body-content{width: $col-lg-85;}
+	.banner-size3{height:90%!important}
 }
 
 @media only screen and (min-width: 320px) and (max-width: 994px) {
 	header{
 		padding-bottom: 15px;
-		h1{width: $col-lg-45;
+		h1{width: $col-lg-60;
 			a{background-position: center left;}
 		}
 		#hold-header-content {width: $col-lg-92;}
@@ -254,7 +257,8 @@ header{background-color: #000; overflow: hidden; width: $col-lg-100;
 			}
 		}
 	}
-	#hold-title-page .center-content .title-page h2{font-size:2.5em;}
+	#hold-title-page{height:30%;}
+	#hold-title-page .center-content .title-page h2{font-size:2em;}
 	#btn-small-menu{display: block!important; margin: 3px 10% 15px 0; float: right;
 		i{color: $green; font-size:36px;}
 	}
@@ -263,8 +267,6 @@ header{background-color: #000; overflow: hidden; width: $col-lg-100;
 	#hold-body-content{width: $col-lg-92;}
 
 	#hold-body-content.grid1 .text-content {width: $col-lg-92;}
-
-	.banner-size3, .banner-size2{height:170px!important;}
 
 	.desktop-arrow{display:none!important;}
 	.mobile-arrow{display: block!important; font-size: 112px!important;}
@@ -280,18 +282,18 @@ header{background-color: #000; overflow: hidden; width: $col-lg-100;
 	.btn-submenu-small{display: block; color: #fff; z-index: 5; position: relative; float: left; font-size: 20px; margin-top: -36px;
 		i{color: $green2}
 	}
-	.closed-submenu{color: #000!important;
+	.closed-submenu{color: #000!important; font-size:1.2em;
 		i{color: #000}
 	}
 	.submenu1{
-	 	width: 99%; position: absolute; z-index:3; left: -0.6%; padding: 20px 0; top: 256px; display: none;
+	 	width: 99%; position: absolute; z-index:3; left: -0.6%; padding: 20px 0; top: 192px; display: none;
 		li{
 			width: 100%; color:#fff;background-color: #000; padding: 0 33px;
 			.inside-submenu1{display: block; position: relative; left: -30px; top: 0;}
 			&:first-child{padding-top:65px;}
 		}
 	}
-	#filter-others{margin-top:-32px;}
+	#filter-others{margin-top:-44px;}
 }
 
 @media only screen and (min-width: 320px) and (max-width: 799px){
@@ -299,4 +301,18 @@ header{background-color: #000; overflow: hidden; width: $col-lg-100;
 	.float-galleries{width: $col-lg-92;
 		&:nth-child(odd){float:none}
 	}
+	.banner-size3{height:38%!important;}
+	.banner-size2{height:28%!important;}
+	.name-researcher{font-size: 0.8em!important;}
+	.hold-researcher{
+		a{font-size: 0.7em!important;}
+		.photo{
+			img{width: 200%!important; left: -38px; top: -22px}
+		}
+	}
+}
+
+@media only screen and (min-width: 800px) and (max-width: 994px){
+	.banner-size3{height:75%!important;}
+	.banner-size2{height:28%!important;}
 }

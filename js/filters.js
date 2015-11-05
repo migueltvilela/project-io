@@ -9,7 +9,7 @@ var Filters = (function(){
 		module.checkActiveFilters();
 		module.submenuOpen();
 		module.submenuFilter();
-		console.log(module.widthScreen)
+		module.otherFilters();
 	}	
 
 	module.checkActiveFilters = function(){
@@ -32,6 +32,19 @@ var Filters = (function(){
 				$(this).find(".inside-submenu1").fadeOut("fast");
 			}
 		})
+	}
+
+	module.otherFilters = function(){
+		$('#filter-others').on('click', function(e) {
+			e.preventDefault();
+			var status = $(this).find('i').data('status');
+
+			if(status == "active"){
+				$(this).find('i').attr('class', 'filter fa fa-times').data('status', 'inactive');
+			}else{
+				$(this).find('i').attr('class', 'filter fa fa-check').data('status', 'active');
+			}
+		});
 	}
 
 	module.submenuFilter = function(){
