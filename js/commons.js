@@ -10,7 +10,12 @@ var Commons = (function(){
 
 		$('.btn-submenu-small').on('click', function(e) {
 			e.preventDefault();
-			module.submenuSmallMenu($(this));
+			module.submenuSmallMenu($(this), $('.submenu1'),'closed-submenu');
+		});
+
+		$('.btn-sidebar-small').on('click', function(e) {
+			e.preventDefault();
+			module.submenuSmallMenu($(this), $('.sidebar-content'));
 		});
 	};
 
@@ -19,15 +24,15 @@ var Commons = (function(){
 		isVisible ? me.siblings('ul').fadeOut('fast') : me.siblings('ul').fadeIn('fast');
 	};
 
-	module.submenuSmallMenu = function(me){
-		var isVisible = $('.submenu1').is(':visible');
+	module.submenuSmallMenu = function(me, divContent, myClass){
+		var isVisible = divContent.is(':visible');
 		if(isVisible){
-			$('.submenu1').fadeOut('fast');
-			$('.btn-submenu-small').addClass('closed-submenu');
+			divContent.fadeOut('fast');
+			me.addClass(myClass);
 		}
 		else{
-			$('.submenu1').fadeIn('fast');
-			$('.btn-submenu-small').removeClass('closed-submenu');
+			divContent.fadeIn('fast');
+			me.removeClass(myClass);
 		}
 	}
 	

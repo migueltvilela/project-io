@@ -95,7 +95,7 @@ header {
 #hold-title-page {
   width: 100%;
   overflow: hidden;
-  height: 45%;
+  height: 120px;
   position: relative; }
   #hold-title-page img {
     width: 100%;
@@ -119,10 +119,10 @@ header {
         font-weight: normal; }
 
 .banner-size2 {
-  height: 70% !important; }
+  height: 265px !important; }
 
 .banner-size3 {
-  height: 110% !important; }
+  height: 395px !important; }
 
 /*--- hold-body-content ----*/
 #hold-body-content {
@@ -228,8 +228,9 @@ header {
     .menu-sidebar li h4 {
       text-transform: uppercase; }
     .menu-sidebar li .hold-map {
-      height: 280px;
       margin: 10px 0 0 0; }
+      .menu-sidebar li .hold-map img {
+        width: 100%; }
     .menu-sidebar li .download-button {
       background-color: #000;
       padding: 20px 10px 10px 10px;
@@ -247,6 +248,9 @@ header {
         font-size: 4em; }
     .menu-sidebar li:last-child {
       border: none; }
+
+.btn-sidebar-small {
+  display: none; }
 
 /*---- submenu index researches ----*/
 .btn-submenu-small {
@@ -438,10 +442,7 @@ header {
     width: 85% !important; }
 
   #hold-body-content {
-    width: 85%; }
-
-  .banner-size3 {
-    height: 90% !important; } }
+    width: 85%; } }
 @media only screen and (min-width: 320px) and (max-width: 994px) {
   header {
     padding-bottom: 15px; }
@@ -576,7 +577,34 @@ header {
         padding-top: 65px; }
 
   #filter-others {
-    margin-top: -44px; } }
+    margin-top: -44px; }
+
+  #hold-body-content {
+    position: relative; }
+
+  .sidebar-content {
+    width: 100% !important;
+    position: absolute;
+    top: 38px;
+    border-top: 2px solid #95d0b0; }
+    .sidebar-content .menu-sidebar {
+      background-color: #000;
+      color: #fff; }
+      .sidebar-content .menu-sidebar li {
+        border-bottom: 2px dotted #95d0b0; }
+      .sidebar-content .menu-sidebar .download-button {
+        background-color: #95d0b0;
+        width: 100%; }
+        .sidebar-content .menu-sidebar .download-button i {
+          margin-right: 30px; }
+
+  .btn-sidebar-small {
+    background-color: #000;
+    display: block;
+    padding: 10px;
+    color: #fff;
+    margin: -50px 0 50px 0;
+    display: block; } }
 @media only screen and (min-width: 320px) and (max-width: 799px) {
   .hold-index-content {
     width: 100%; }
