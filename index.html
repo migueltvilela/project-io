@@ -3,19 +3,21 @@
 	<title>Antartic Microbes</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="cartodb/cartodb.css" />
+	<link rel="stylesheet" href="css/libs/cartodb/cartodb.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 <body>
 	<header>
 		<div id="hold-header-content">
 			<h1><a href="index.html">Antartic Microbes</a></h1>
 			<nav>
+				<a href="#" id="btn-small-menu"><i class="fa fa-bars"></i></a>
 				<ul>
-					<li><a href="proantar.html"><span>The Antarctic <br/>Invisible Life</span></a></li>
-					<li><a href="rede-microbiologia.html"><span>Research <br/>Network</span></a></li>
-					<li><a href="research-institutes.html"><span>Research <br>Institutes</span></a></li>
-					<li><a href="photos.html"><span>Photos/ <br>Videos</span></a></li>
+					<li><a href="proantar.html"><span>The Antarctic Invisible Life</span></a></li>
+					<li><a href="rede-microbiologia.html"><span>Research Network</span></a></li>
+					<li><a href="research-institutes.html"><span>Research Institutes</span></a></li>
+					<li><a href="photos.html"><span>Photos/ Videos</span></a></li>
 					<li><a href="index-research.html"><span>Index</span></a></li>
 				</ul>
 			</nav>
@@ -25,14 +27,42 @@
 		<img src="images/banner-index.jpg" />
 		<div class="center-content">
 			<div class="title-page" id="home-title">
-				<h2>Antartic Microbes - Results of brazilian Antartic program | 1998/2014</h2>
+				<h2>
+					<img src="images/title-home.png" width="686" height="70"  alt="Antartic Microbes - Results of brazilian Antartic program | 1998/2014" />
+				</h2>
 			</div><!-- title-page -->
 		</div>
 	</div><!-- hold-title-page -->
 	<div id="hold-body-content" class="grid1">
+
+
 		<div class="hold-map">
-			<div id="map"></div>
+			<div id="filters">
+			  <div class="filters" id="filter-subject">
+			    <ul class="inside-submenu1">
+			    </ul>
+			  </div>
+			  <div class="filters" id="filter-microorganism">
+			    <ul class="inside-submenu1">
+			    </ul>
+			  </div>
+			  <div class="filters" id="filter-type_of_sample_habitat">
+			    <ul class="inside-submenu1">
+			    </ul>
+			  </div>
+			</div>
+
+			<div id='map'></div>
+
+			<div id="tooltip" class="hidden">
+			  <p id="title"></p>
+			  <p id="subject"></p>
+			  <p id="microorganism"></p>
+			  <p id="type_of_sample_habitat"></p>
+			</div>
 		</div>
+
+
 		<div class="text-content">
 			<span class="captalized-text">L</span>orem ipsum dolor sit amet, consectetur adipiscing elit. Proin lobortis tincidunt tortor id elementum. Donec condimentum felis sed eros blandit posuere. Maecenas convallis scelerisque placerat. Proin tincidunt arcu et tristique facilisis. Integer eu varius nulla, vulputate viverra lorem. Duis dapibus convallis turpis, molestie lacinia urna eleifend ac. Pellentesque a venenatis est. Aliquam quis lacus mollis, pellentesque velit vulputate, sagittis nisl. Aenean viverra erat non felis sagittis, nec aliquam est malesuada. Ut eu dignissim nisi. Etiam ac massa sem. In fringilla molestie mi id tempus. Proin iaculis elit vitae nulla tincidunt dapibus. Nulla non erat vitae est congue rutrum ut eget elit. Suspendisse consequat risus nec ex iaculis vehicula.
 
@@ -48,8 +78,12 @@
 	<footer>
 	</footer>
 
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/commons.js"></script>
+
 	<!-- include cartodb.js library -->
-    <script src="cartodb/cartodb_3.15.8.js"></script>
+    <script src='js/libs/mapbox/mapbox.js'></script>
+	<script src="js/libs/cartodb/cartodb.js"></script>
 
     <script src="js/main_map.js"></script>
 </body>
