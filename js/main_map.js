@@ -1,9 +1,10 @@
 var Maps = (function(){
-  console.log('filter();')
   var module = {};
 
-  module.activeFilters = [];
-  module.inactiveFilters = [];
+  module.inactiveFilters = {
+                              subject:[],
+                              microorganism: [],
+                              type_of_sample_habitat: []};
   module.widthScreen = window.innerWidth;
 
   module.init = function(){
@@ -28,6 +29,8 @@ var Maps = (function(){
       var nameSubject = d.properties['subject'],
           nameMicroorganism = d.properties['microorganism'],
           nameHabitat = d.properties['type_of_sample_habitat'];
+
+      d.hide = false;
 
       filters.forEach(function(e) {
         if(d.properties[e].indexOf('/')<0){
@@ -54,7 +57,7 @@ var Maps = (function(){
   module.drawMap = function(){
     L.mapbox.accessToken = 'pk.eyJ1IjoiZGVobWlyYW5kYWMyIiwiYSI6ImNpaHRncDNocjAxOTd1MW0xcmpwcnl2MzMifQ.brpwWKmPZbAa0pAXSMA1ow';
     module.map = L.mapbox.map('map', 'dehmirandac2.ocfpo5eo')
-      .setView([-63.85, -57.77], 6);
+      .setView([-62.10, -58.27], 9);
 
     var sql_statement = 'SELECT * FROM database_io_revisado_290915_vmapa WHERE the_geom IS NOT NULL',
         sql = new cartodb.SQL({ user: 'migueltvilela', format: 'geojson', dp: 5}),
@@ -72,8 +75,8 @@ var Maps = (function(){
     var circle_options = {
       color: '#fff',      // Stroke color
       opacity: 1,         // Stroke opacity
-      weight: 5,         // Stroke weight
-      fillColor: 'orange',  // Fill color
+      weight: 1,         // Stroke weight
+      fillColor: '#b11b00',  // Fill color
       fillOpacity: 1   // Fill opacity
     }
 
@@ -86,7 +89,6 @@ var Maps = (function(){
 
     //click on markee
       $('.leaflet-clickable').on('click', function(e){
-        console.log('click')
         var index = $(this).parent().index();
         var lengthTooltip = $('#tooltip').find('p').length;
         for(i=0; i<lengthTooltip; ++i){
@@ -115,29 +117,43 @@ var Maps = (function(){
            nameAttr = $(this).parents('.filters').attr('id').split('-')[1],
             id = $(this).find('i').attr("id"),
             status = $(this).find('i').data('status'),
-            indexFilter = module.activeFilters.indexOf(id);
+            indexFilter = module.inactiveFilters[nameAttr].indexOf(id);
 
        if(status == "active"){
         $(this).find('i').attr('class', 'filter fa fa-times').data('status', 'inactive');
 
-        module.activeFilters.splice(indexFilter, 1);
-        module.inactiveFilters.push(id);
+         module.inactiveFilters[nameAttr].push(id);
 
        } else{
         $(this).find('i').attr('class', 'filter fa fa-check').data('status', 'active');
 
-        module.inactiveFilters.splice(indexFilter, 1);
-        module.activeFilters.push(id);
+        module.inactiveFilters[nameAttr].splice(indexFilter, 1);
        }
 
+       console.log(module.inactiveFilters)
+
        data.forEach(function(e) {
-        var value = e.properties[nameAttr].toLowerCase();
-        if(value.indexOf(filterName)<0 && status == "active"){
-          e.hide = true;
-        }else if(value.indexOf(filterName)<0 && status == "inactive"){
-          e.hide = false;
-        }
+        $.each(module.inactiveFilters, function(index, value) {
+            e.hide = false;
+            for(i in value){
+              var myVal = e.properties[index].toLowerCase(),
+                  name = value[i].toLowerCase();
+              //console.log(myVal)
+              //console.log(name)
+              //console.log(myVal.indexOf(name))
+              //console.log("")
+              if(myVal.indexOf(name)>=0){
+                e.hide = true;
+                return false
+              }
+              else{
+                e.hide = false;
+              }
+              //console.log(myVal.indexOf(val))
+            }
+        }); 
        })
+
        module.drawCircles(data);
 
      });

@@ -50,7 +50,6 @@ var Filters = (function(){
 
 	module.submenuFilter = function(){
 		$(".filter").on("click", function(e){
-			console.log('clicou')
 			e.preventDefault();
 
 			var id = $(this).find('i').attr("id"),
