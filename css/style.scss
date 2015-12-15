@@ -70,11 +70,13 @@ body{font-family: $fontSansSerif; background: url("../images/background.jpg") no
 	i{float: right; color: #4ed49b;}
 }
 
-#tooltip {position: absolute; width: 300px; height: auto; padding: 10px; background-color: white; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4); -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4); box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4); pointer-events: none;}
+#tooltip {position: absolute; width: 300px; height: auto; padding: 10px; background-color: #4F8681;  -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4); -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4); box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4); pointer-events: none; color: #fff;}
 
 #tooltip.hidden { display: none; }
 
   #tooltip p {font-family: sans-serif; font-size: 16px; line-height: 20px;}
+
+  #btn-small-filters{display: none;}
 
 /*---- header ----*/
 header{background-color: #000; overflow: hidden; width: $col-lg-100;

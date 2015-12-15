@@ -130,8 +130,6 @@ var Maps = (function(){
         module.inactiveFilters[nameAttr].splice(indexFilter, 1);
        }
 
-       console.log(module.inactiveFilters)
-
        data.forEach(function(e) {
         $.each(module.inactiveFilters, function(index, value) {
             e.hide = false;
