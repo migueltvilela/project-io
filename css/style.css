@@ -685,9 +685,9 @@ header {
   .hold-researcher a {
     font-size: 0.7em !important; }
   .hold-researcher .photo img {
-    width: 200% !important;
-    left: -38px;
-    top: -22px; } }
+    width: 350% !important;
+    left: -149px;
+    top: -42px; } }
 @media only screen and (min-width: 800px) and (max-width: 994px) {
   .banner-size3 {
     height: 75% !important; }
