@@ -88,8 +88,9 @@ body {
 
 #tooltip p {
   font-family: sans-serif;
-  font-size: 16px;
-  line-height: 20px; }
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 10px; }
 
 #btn-small-filters {
   display: none; }

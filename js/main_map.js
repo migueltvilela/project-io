@@ -59,11 +59,11 @@ var Maps = (function(){
     module.map = L.mapbox.map('map', 'dehmirandac2.ocfpo5eo')
       .setView([-62.10, -58.27], 9);
 
-    var sql_statement = 'SELECT * FROM database_io_revisado_290915_vmapa WHERE the_geom IS NOT NULL',
+    var sql_statement = 'SELECT * FROM database_io_revisado_151215_vmapa WHERE the_geom IS NOT NULL',
         sql = new cartodb.SQL({ user: 'migueltvilela', format: 'geojson', dp: 5}),
         data;
 
-    sql.execute(sql_statement, {table_name: 'database_io_revisado_290915_vmapa'})
+    sql.execute(sql_statement, {table_name: 'database_io_revisado_151215_vmapa'})
       .done(function(collection) {
           data = collection.features
          module.drawCircles(data);
@@ -94,8 +94,13 @@ var Maps = (function(){
         for(i=0; i<lengthTooltip; ++i){
           var idValue = $('#tooltip').find('p').eq(i).attr('id'),
               text = data[index].properties[idValue];
-
-          $('#tooltip').find('p').eq(i).text(text);
+          console.log(data[index].properties)
+          if(idValue == "paper_link"){
+            $('#tooltip').find('p').eq(i).href(text);
+          }
+          else{
+            $('#tooltip').find('p').eq(i).text(text);
+          }
          }
          $('#tooltip').css("left", (event.x)+"px").css("top", (event.y) + "px").show();
       })
