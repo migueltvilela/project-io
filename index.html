@@ -37,9 +37,20 @@
 
 
 		<div class="hold-map">
-			<a href="#" id="btn-small-filters"><i class="fa fa-bars"></i></a>
+			<div id="small-filter">
+				<h3>Research spots</h3>
+				<div>
+					Show filters
+					<a href="#" id="btn-small-filters"><i class="fa fa-bars"></i></a>
+				</div>
+			</div>
+
 			<div id="filters">
 				<div class="hold-filters">
+				<div id="hide-filters">
+					<a href="#" id="btn-hide-filters">Show filters <i class="fa fa-times"></i></a>
+				</div>
+
 				  <h3>Research spots</h3>
 				  <h4>select <span>subject</span></h4>
 				  <div class="filters" id="filter-subject">
@@ -59,8 +70,6 @@
 				</div>
 			</div>
 
-			<div id='map'></div>
-
 			<div id="tooltip" class="hidden">
 			  <p id="title"></p>
 			  <p id="subject"></p>
@@ -68,6 +77,10 @@
 			  <p id="type_of_sample_habitat"></p>
 			  <a href="" id="paper_link">Link para paper</a>
 			</div>
+
+			<div id='map'></div>
+
+			
 		</div>
 
 

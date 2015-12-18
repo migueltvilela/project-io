@@ -33,14 +33,18 @@ body {
 
 #map {
   width: 75%;
-  height: 450px; }
+  height: 450px;
+  position: relative;
+  z-index: 1; }
 
 #filters {
   float: left;
   background-color: #000;
   color: #fff;
   width: 25%;
-  height: 450px; }
+  height: 450px;
+  position: relative;
+  z-index: 2; }
   #filters .hold-filters {
     overflow-x: auto;
     height: 450px; }
@@ -71,6 +75,17 @@ body {
     float: right;
     color: #4ed49b; }
 
+#hide-filters {
+  color: #fff;
+  text-align: right;
+  padding: 10px;
+  display: none; }
+  #hide-filters a {
+    color: #fff; }
+    #hide-filters a i {
+      color: #fff;
+      padding-left: 5px; }
+
 #tooltip {
   position: absolute;
   width: 300px;
@@ -92,8 +107,23 @@ body {
   line-height: 20px;
   margin-bottom: 10px; }
 
-#btn-small-filters {
-  display: none; }
+#small-filter {
+  display: none;
+  color: #fff;
+  overflow: hidden;
+  background-color: #000;
+  padding: 10px;
+  text-transform: uppercase; }
+  #small-filter h3 {
+    float: left; }
+  #small-filter div {
+    float: right;
+    font-size: 12px; }
+    #small-filter div a {
+      color: #4ed49b; }
+      #small-filter div a i {
+        font-size: 16px;
+        margin-left: 5px; }
 
 /*---- header ----*/
 header {
@@ -597,6 +627,27 @@ header {
 
   .legend {
     padding-bottom: 60px !important; }
+
+  #small-filter {
+    display: block; }
+
+  #filters {
+    display: none;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0; }
+    #filters h3 {
+      display: none; }
+
+  #hide-filters {
+    display: block; }
+
+  #btn-hide-filters {
+    display: block; }
+
+  #map {
+    width: 100%; }
 
   .btn-submenu-small {
     display: block;

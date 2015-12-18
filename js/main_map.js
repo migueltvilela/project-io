@@ -87,6 +87,27 @@ var Maps = (function(){
       }
      });
 
+     /*$('.leaflet-zoom-animated').on('click',function(e) {
+        // Force the popup closed.
+        //e.layer.closePopup();
+
+        //var feature = e.layer.feature;
+        var info = document.getElementById('tooltip');
+        var content = '<div><strong>' + 'oi' + '</strong>' +
+                      '<p>' + 'tchau' + '</p></div>';
+
+        info.innerHTML = content;
+    });*/
+
+     /*module.map.addLayer
+     $('.leaflet-zoom-animated').append('<div id="tooltip" class="hidden">'+
+        '<p id="title"></p>'+
+        '<p id="subject"></p>'+
+        '<p id="microorganism"></p>'+
+        '<p id="type_of_sample_habitat"></p>'+
+        '<a href="" id="paper_link">Link para paper</a>'+
+      '</div>')*/
+
     //click on markee
       $('.leaflet-clickable').on('click', function(e){
         var index = $(this).parent().index();
