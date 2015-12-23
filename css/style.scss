@@ -53,6 +53,10 @@ body{font-family: $fontSansSerif; background: url("../images/background.jpg") no
 .no-pad-t{padding-top: 0!important;}
 .title-more{text-transform:uppercase; margin-bottom:20px;}
 
+.checkbox{background-color: #fff; width: 18px; height: 18px; border-radius: 2px; float: right;
+	i{padding: 2px;}
+}
+
 /*---- map ----*/
 
 .hold-map{margin-bottom:50px;}
@@ -67,7 +71,7 @@ body{font-family: $fontSansSerif; background: url("../images/background.jpg") no
 		li{margin-bottom:5px;}
 	}
 	a{color: #fff; width: 100%; text-transform: uppercase; font-family:$fontSansSerif; font-size: 13px;}
-	i{float: right; color: #4ed49b;}
+	i{float: right; color: #000;}
 }
 #hide-filters{color: #fff; text-align: right; padding: 10px; display: none;
 	a{color: #fff;
@@ -75,7 +79,7 @@ body{font-family: $fontSansSerif; background: url("../images/background.jpg") no
 	}
 }
 
-#tooltip {position: absolute; width: 300px; height: auto; padding: 10px; background-color: #4F8681;  -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4); -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4); box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4); pointer-events: none; color: #fff;}
+#tooltip {position: absolute; width: 300px; height: auto; padding: 10px; background-color: #4F8681;  -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4); -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4); box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4); color: #fff; z-index:999999;}
 
 #tooltip.hidden { display: none; }
 
@@ -178,9 +182,6 @@ header{background-color: #000; overflow: hidden; width: $col-lg-100;
 			span{text-transform: uppercase; float: left; font-size: 1.5em}
 			i{color: #fff; float: right; font-size: 4em;}
 		}
-		/*.photo-animal{@include round-border(120px, #000, 2px); overflow: hidden; text-align: center; position: relative; float: left; z-index:1;
-			img{width: 180px; position: absolute; left: -20px; z-index:0;}
-		}*/
 		&:last-child{border:none}
 	}
 }
@@ -200,7 +201,7 @@ header{background-color: #000; overflow: hidden; width: $col-lg-100;
 				color: #fff; text-transform: uppercase; font-size: 0.9em; padding: 5px 0;
 				&:first-child{border-top: 2px solid $green; padding-top: 10px;}
 				a{color:#fff; display:block;
-					i{font-size: 1.2em; color: $green; float: right;}
+					i{font-size: 1em; color: #000; float: right; padding: 2px;}
 				}
 			}
 		}

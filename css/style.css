@@ -27,6 +27,15 @@ body {
   text-transform: uppercase;
   margin-bottom: 20px; }
 
+.checkbox {
+  background-color: #fff;
+  width: 18px;
+  height: 18px;
+  border-radius: 2px;
+  float: right; }
+  .checkbox i {
+    padding: 2px; }
+
 /*---- map ----*/
 .hold-map {
   margin-bottom: 50px; }
@@ -73,7 +82,7 @@ body {
     font-size: 13px; }
   #filters i {
     float: right;
-    color: #4ed49b; }
+    color: #000; }
 
 #hide-filters {
   color: #fff;
@@ -95,8 +104,8 @@ body {
   -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
-  pointer-events: none;
-  color: #fff; }
+  color: #fff;
+  z-index: 999999; }
 
 #tooltip.hidden {
   display: none; }
@@ -311,10 +320,7 @@ header {
   .menu-sidebar li {
     border-bottom: 2px dotted #000;
     padding: 15px 0;
-    overflow: hidden;
-    /*.photo-animal{@include round-border(120px, #000, 2px); overflow: hidden; text-align: center; position: relative; float: left; z-index:1;
-    	img{width: 180px; position: absolute; left: -20px; z-index:0;}
-    }*/ }
+    overflow: hidden; }
     .menu-sidebar li h4 {
       text-transform: uppercase; }
     .menu-sidebar li .hold-map {
@@ -387,9 +393,10 @@ header {
           color: #fff;
           display: block; }
           .submenu1 > li ul li a i {
-            font-size: 1.2em;
-            color: #4ed49b;
-            float: right; }
+            font-size: 1em;
+            color: #000;
+            float: right;
+            padding: 2px; }
 
 #filter-others {
   float: right;

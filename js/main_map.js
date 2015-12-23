@@ -1,7 +1,7 @@
 var Maps = (function(){
   var module = {};
 
-  module.inactiveFilters = {
+  module.activeFilters = {
                               subject:[],
                               microorganism: [],
                               type_of_sample_habitat: []};
@@ -36,7 +36,7 @@ var Maps = (function(){
         if(d.properties[e].indexOf('/')<0){
           if(valsFilters.indexOf(d.properties[e].toLowerCase()) < 0){
             valsFilters.push(d.properties[e].toLowerCase());
-            $('#filter-'+e).find('ul').append('<li><a href="#" class="filter">'+d.properties[e]+'<i class="fa fa-check" data-status="active" id="'+d.properties[e]+'"></i></a></li>')
+            $('#filter-'+e).find('ul').append('<li><a href="#" class="filter">'+d.properties[e]+'<div class="checkbox"><i class="fa" data-status="inactive" id="'+d.properties[e]+'"></i></div></a></li>')
           }
         }
         else{
@@ -44,7 +44,7 @@ var Maps = (function(){
           for(v in splitVals){
             if(valsFilters.indexOf(splitVals[v].toLowerCase()) < 0){
               valsFilters.push(splitVals[v].toLowerCase());
-              $('#filter-'+e).find('ul').append('<li><a href="#" class="filter">'+splitVals[v]+'<i class="fa fa-check" data-status="active" id="'+splitVals[v]+'"></i></a></li>')
+              $('#filter-'+e).find('ul').append('<li><a href="#" class="filter">'+splitVals[v]+'<div class="checkbox"><i class="fa" data-status="inactive" id="'+splitVals[v]+'"></i></div></a></li>')
             }
           }
         }
@@ -111,16 +111,17 @@ var Maps = (function(){
     //click on markee
       $('.leaflet-clickable').on('click', function(e){
         var index = $(this).parent().index();
-        var lengthTooltip = $('#tooltip').find('p').length;
+        var lengthTooltip = $('#tooltip').children().length;
         for(i=0; i<lengthTooltip; ++i){
-          var idValue = $('#tooltip').find('p').eq(i).attr('id'),
+          var idValue = $('#tooltip').children().eq(i).attr('id'),
               text = data[index].properties[idValue];
-          console.log(data[index].properties)
+          console.log(idValue)
           if(idValue == "paper_link"){
-            $('#tooltip').find('p').eq(i).href(text);
+            console.log(text)
+            $('#tooltip').children().eq(i).attr('href', text);
           }
           else{
-            $('#tooltip').find('p').eq(i).text(text);
+            $('#tooltip').children().eq(i).text(text);
           }
          }
          $('#tooltip').css("left", (event.x)+"px").css("top", (event.y) + "px").show();
@@ -143,22 +144,22 @@ var Maps = (function(){
            nameAttr = $(this).parents('.filters').attr('id').split('-')[1],
             id = $(this).find('i').attr("id"),
             status = $(this).find('i').data('status'),
-            indexFilter = module.inactiveFilters[nameAttr].indexOf(id);
+            indexFilter = module.activeFilters[nameAttr].indexOf(id);
 
        if(status == "active"){
-        $(this).find('i').attr('class', 'filter fa fa-times').data('status', 'inactive');
+        $(this).find('i').attr('class', 'filter').data('status', 'inactive');
 
-         module.inactiveFilters[nameAttr].push(id);
+         module.activeFilters[nameAttr].splice(indexFilter, 1);
 
        } else{
         $(this).find('i').attr('class', 'filter fa fa-check').data('status', 'active');
 
-        module.inactiveFilters[nameAttr].splice(indexFilter, 1);
+        module.activeFilters[nameAttr].push(id);
        }
 
        data.forEach(function(e) {
-        $.each(module.inactiveFilters, function(index, value) {
-            e.hide = false;
+        $.each(module.activeFilters, function(index, value) {
+            e.hide = true;
             for(i in value){
               var myVal = e.properties[index].toLowerCase(),
                   name = value[i].toLowerCase();
@@ -167,11 +168,11 @@ var Maps = (function(){
               //console.log(myVal.indexOf(name))
               //console.log("")
               if(myVal.indexOf(name)>=0){
-                e.hide = true;
+                e.hide = false;
                 return false
               }
               else{
-                e.hide = false;
+                e.hide = true;
               }
               //console.log(myVal.indexOf(val))
             }
