@@ -17,6 +17,17 @@ var Commons = (function(){
 			e.preventDefault();
 			module.submenuSmallMenu($(this), $('.sidebar-content'));
 		});
+
+		$('#btn-small-filters').on('click', function(e) {
+			e.preventDefault();
+			module.submenuSmallMenu($(this), $('#filters'));
+		});
+
+		$('#hide-filters').on('click', function(e){
+			e.preventDefault();
+			$(this).parents('#filters').hide();
+		})
+
 	};
 
 	module.smallMenu = function(me){

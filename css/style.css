@@ -27,52 +27,112 @@ body {
   text-transform: uppercase;
   margin-bottom: 20px; }
 
+.checkbox {
+  background-color: #fff;
+  width: 18px;
+  height: 18px;
+  border-radius: 2px;
+  float: right; }
+  .checkbox i {
+    padding: 2px; }
+
 /*---- map ----*/
 .hold-map {
   margin-bottom: 50px; }
 
 #map {
-  width: 80%;
-  height: 450px; }
+  width: 75%;
+  height: 450px;
+  position: relative;
+  z-index: 1; }
 
 #filters {
   float: left;
   background-color: #000;
   color: #fff;
-  width: 20%;
-  height: 450px; }
+  width: 25%;
+  height: 450px;
+  position: relative;
+  z-index: 2; }
+  #filters .hold-filters {
+    overflow-x: auto;
+    height: 450px; }
+  #filters h3 {
+    text-transform: uppercase;
+    font-size: 17px;
+    margin: 20px 20px 10px 20px; }
+  #filters h4 {
+    font-size: 16px;
+    margin: 10px 20px 10px 20px;
+    border-bottom: 1px solid #d5ebdf;
+    padding-bottom: 10px; }
+    #filters h4 span {
+      text-transform: uppercase;
+      font-size: 17px; }
+  #filters ul {
+    margin: 0 20px;
+    border-bottom: 2px solid #d5ebdf; }
+    #filters ul li {
+      margin-bottom: 5px; }
+  #filters a {
+    color: #fff;
+    width: 100%;
+    text-transform: uppercase;
+    font-family: helvetica, arial;
+    font-size: 13px; }
+  #filters i {
+    float: right;
+    color: #000; }
 
-#filters ul {
-  margin: 0 20px; }
-
-#filters a {
+#hide-filters {
   color: #fff;
-  width: 100%; }
-
-#filters i {
-  float: right; }
+  text-align: right;
+  padding: 10px;
+  display: none; }
+  #hide-filters a {
+    color: #fff; }
+    #hide-filters a i {
+      color: #fff;
+      padding-left: 5px; }
 
 #tooltip {
   position: absolute;
   width: 300px;
   height: auto;
   padding: 10px;
-  background-color: white;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  background-color: #4F8681;
   -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
-  pointer-events: none; }
+  color: #fff;
+  z-index: 999999; }
 
 #tooltip.hidden {
   display: none; }
 
 #tooltip p {
   font-family: sans-serif;
-  font-size: 16px;
-  line-height: 20px; }
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 10px; }
+
+#small-filter {
+  display: none;
+  color: #fff;
+  overflow: hidden;
+  background-color: #000;
+  padding: 10px;
+  text-transform: uppercase; }
+  #small-filter h3 {
+    float: left; }
+  #small-filter div {
+    float: right;
+    font-size: 12px; }
+    #small-filter div a {
+      color: #4ed49b; }
+      #small-filter div a i {
+        font-size: 16px;
+        margin-left: 5px; }
 
 /*---- header ----*/
 header {
@@ -260,10 +320,7 @@ header {
   .menu-sidebar li {
     border-bottom: 2px dotted #000;
     padding: 15px 0;
-    overflow: hidden;
-    /*.photo-animal{@include round-border(120px, #000, 2px); overflow: hidden; text-align: center; position: relative; float: left; z-index:1;
-    	img{width: 180px; position: absolute; left: -20px; z-index:0;}
-    }*/ }
+    overflow: hidden; }
     .menu-sidebar li h4 {
       text-transform: uppercase; }
     .menu-sidebar li .hold-map {
@@ -336,9 +393,10 @@ header {
           color: #fff;
           display: block; }
           .submenu1 > li ul li a i {
-            font-size: 1.2em;
-            color: #4ed49b;
-            float: right; }
+            font-size: 1em;
+            color: #000;
+            float: right;
+            padding: 2px; }
 
 #filter-others {
   float: right;
@@ -577,6 +635,27 @@ header {
   .legend {
     padding-bottom: 60px !important; }
 
+  #small-filter {
+    display: block; }
+
+  #filters {
+    display: none;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0; }
+    #filters h3 {
+      display: none; }
+
+  #hide-filters {
+    display: block; }
+
+  #btn-hide-filters {
+    display: block; }
+
+  #map {
+    width: 100%; }
+
   .btn-submenu-small {
     display: block;
     color: #fff;
@@ -600,7 +679,7 @@ header {
     z-index: 3;
     left: -0.6%;
     padding: 20px 0;
-    top: 192px;
+    top: 66px;
     display: none; }
     .submenu1 li {
       width: 100%;
@@ -665,9 +744,9 @@ header {
   .hold-researcher a {
     font-size: 0.7em !important; }
   .hold-researcher .photo img {
-    width: 200% !important;
-    left: -38px;
-    top: -22px; } }
+    width: 350% !important;
+    left: -149px;
+    top: -42px; } }
 @media only screen and (min-width: 800px) and (max-width: 994px) {
   .banner-size3 {
     height: 75% !important; }

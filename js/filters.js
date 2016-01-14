@@ -3,24 +3,24 @@ var Filters = (function(){
 	var module = {};
 
 	module.activeFilters = [];
-	module.inactiveFilters = [];
+	//module.inactiveFilters = [];
 	module.widthScreen = window.innerWidth;
 
 	module.init = function(){
-		module.checkActiveFilters();
+		/*module.checkActiveFilters();*/
 		module.submenuOpen();
 		module.submenuFilter();
 		module.otherFilters();
 	}	
 
-	module.checkActiveFilters = function(){
+	/*module.checkActiveFilters = function(){
 		var length = $('.inside-submenu1 li').length,
 			i = 0;
 		for(i; i<length; ++i){
 			var id = $('.filter').eq(i).attr('id');
 			module.activeFilters.push(id)
 		}
-	}
+	}*/
 
 	module.submenuOpen = function(){
 		$(".submenu1 li").on("mouseenter", function(){
@@ -50,7 +50,6 @@ var Filters = (function(){
 
 	module.submenuFilter = function(){
 		$(".filter").on("click", function(e){
-			console.log('clicou')
 			e.preventDefault();
 
 			var id = $(this).find('i').attr("id"),
@@ -58,26 +57,30 @@ var Filters = (function(){
 				indexFilter = module.activeFilters.indexOf(id);
 
 			 if(status == "active"){
-			 	$(this).find('i').attr('class', 'filter fa fa-times').data('status', 'inactive');
+			 	$(this).find('i').attr('class', 'filter').data('status', 'inactive');
 
+			 	//module.inactiveFilters.splice(indexFilter, 1);
 			 	module.activeFilters.splice(indexFilter, 1);
-			 	module.inactiveFilters.push(id);
 
 			 } else{
 			 	$(this).find('i').attr('class', 'filter fa fa-check').data('status', 'active');
 
-			 	module.inactiveFilters.splice(indexFilter, 1);
 			 	module.activeFilters.push(id);
+			 	//module.inactiveFilters.push(id);
 			 }
 
 			 module.hideFiltered();
+
+			 console.log(module.activeFilters)
+			 //console.log(module.inactiveFilters)
 		})
 	}
 
 	module.hideFiltered = function(){
 		$('.float-indexes').show();
-		for(i in module.inactiveFilters){
-			$('.filter-'+module.inactiveFilters[i]).parents('.float-indexes').hide();
+		for(i in module.activeFilters){
+			$('.float-indexes').hide();
+			$('.filter-'+module.activeFilters[i]).parents('.float-indexes').show();
 		}
 	}
 
