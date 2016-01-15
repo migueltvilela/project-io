@@ -87,27 +87,6 @@ var Maps = (function(){
       }
      });
 
-     /*$('.leaflet-zoom-animated').on('click',function(e) {
-        // Force the popup closed.
-        //e.layer.closePopup();
-
-        //var feature = e.layer.feature;
-        var info = document.getElementById('tooltip');
-        var content = '<div><strong>' + 'oi' + '</strong>' +
-                      '<p>' + 'tchau' + '</p></div>';
-
-        info.innerHTML = content;
-    });*/
-
-     /*module.map.addLayer
-     $('.leaflet-zoom-animated').append('<div id="tooltip" class="hidden">'+
-        '<p id="title"></p>'+
-        '<p id="subject"></p>'+
-        '<p id="microorganism"></p>'+
-        '<p id="type_of_sample_habitat"></p>'+
-        '<a href="" id="paper_link">Link para paper</a>'+
-      '</div>')*/
-
     //click on markee
       $('.leaflet-clickable').on('click', function(e){
         var index = $(this).parent().index();
@@ -115,10 +94,9 @@ var Maps = (function(){
         for(i=0; i<lengthTooltip; ++i){
           var idValue = $('#tooltip').children().eq(i).attr('id'),
               text = data[index].properties[idValue];
-          console.log(idValue)
-          if(idValue == "paper_link"){
-            console.log(text)
-            $('#tooltip').children().eq(i).attr('href', text);
+        
+          if(idValue == "title"){
+            $('#tooltip').children().eq(i).find('a').attr('href', text).text(text);
           }
           else{
             $('#tooltip').children().eq(i).text(text);
@@ -163,10 +141,6 @@ var Maps = (function(){
             for(i in value){
               var myVal = e.properties[index].toLowerCase(),
                   name = value[i].toLowerCase();
-              //console.log(myVal)
-              //console.log(name)
-              //console.log(myVal.indexOf(name))
-              //console.log("")
               if(myVal.indexOf(name)>=0){
                 e.hide = false;
                 return false
@@ -174,7 +148,6 @@ var Maps = (function(){
               else{
                 e.hide = true;
               }
-              //console.log(myVal.indexOf(val))
             }
         }); 
        })

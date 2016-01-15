@@ -81,9 +81,15 @@ body{font-family: $fontSansSerif; background: url("../images/background.jpg") no
 
 #tooltip {position: absolute; width: 300px; height: auto; padding: 10px; background-color: #4F8681;  -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4); -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4); box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4); color: #fff; z-index:999999;}
 
+#tooltip{
+	h5{
+		margin-bottom: 10px;
+		a{color: #fff; text-decoration: underline; font-weight: normal}
+	}
+}
 #tooltip.hidden { display: none; }
 
-  #tooltip p {font-family: sans-serif; font-size: 14px; line-height: 20px; margin-bottom:10px;}
+  #tooltip p {font-family: sans-serif; font-size: 14px; line-height: 20px; margin-bottom:0px; font-weight: bold}
 
   #small-filter{display: none; color: #fff; overflow: hidden; background-color: #000; padding: 10px; text-transform: uppercase;
   	h3{float: left;}
