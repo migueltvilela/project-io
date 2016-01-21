@@ -507,17 +507,17 @@ header {
   float: left;
   margin-right: 5%; }
   .hold-researcher .photo {
-    width: 90%;
+    width: 70%;
     height: auto;
-    padding-top: 90%;
-    border-radius: 90%;
+    padding-top: 70%;
+    border-radius: 70%;
     border-color: #000;
     border-width: 3px;
     border-style: solid;
     overflow: hidden;
     text-align: center;
     position: relative;
-    float: left;
+    margin: 0 auto;
     margin-bottom: 10px; }
     .hold-researcher .photo img {
       width: 580px;

@@ -55,9 +55,15 @@ var Maps = (function(){
   }
 
   module.drawMap = function(){
-    L.mapbox.accessToken = 'pk.eyJ1IjoiZGVobWlyYW5kYWMyIiwiYSI6ImNpaHRncDNocjAxOTd1MW0xcmpwcnl2MzMifQ.brpwWKmPZbAa0pAXSMA1ow';
+
+    module.map = L.map('map').setView([-62.10, -58.27], 9);
+
+L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png').addTo(module.map);
+
+
+    /*L.mapbox.accessToken = 'pk.eyJ1IjoiZGVobWlyYW5kYWMyIiwiYSI6ImNpaHRncDNocjAxOTd1MW0xcmpwcnl2MzMifQ.brpwWKmPZbAa0pAXSMA1ow';
     module.map = L.mapbox.map('map', 'dehmirandac2.ocfpo5eo')
-      .setView([-62.10, -58.27], 9);
+        .setView([-62.10, -58.27], 9);*/
 
     var sql_statement = 'SELECT * FROM database_io_revisado_151215_vmapa WHERE the_geom IS NOT NULL',
         sql = new cartodb.SQL({ user: 'migueltvilela', format: 'geojson', dp: 5}),

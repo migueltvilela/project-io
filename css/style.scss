@@ -260,7 +260,7 @@ header{background-color: #000; overflow: hidden; width: $col-lg-100;
 
 .hold-researcher{
 	width: $col-lg-21; text-align: center; font-weight: bold; float: left; margin-right: 5%;
-	.photo{@include round-border(90%, #000, 3px); overflow: hidden; text-align: center; position: relative; float: left; margin-bottom: 10px;
+	.photo{@include round-border(70%, #000, 3px); overflow: hidden; text-align: center; position: relative; margin: 0 auto; margin-bottom: 10px;
 		img{width: 580px; position: absolute; left: -196px; top: -63px;}
 	}
 	p{font-size: 1.2em;}
