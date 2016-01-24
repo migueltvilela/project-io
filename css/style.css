@@ -107,6 +107,13 @@ body {
   color: #fff;
   z-index: 999999; }
 
+#tooltip h5 {
+  margin-bottom: 10px; }
+  #tooltip h5 a {
+    color: #fff;
+    text-decoration: underline;
+    font-weight: normal; }
+
 #tooltip.hidden {
   display: none; }
 
@@ -114,7 +121,8 @@ body {
   font-family: sans-serif;
   font-size: 14px;
   line-height: 20px;
-  margin-bottom: 10px; }
+  margin-bottom: 0px;
+  font-weight: bold; }
 
 #small-filter {
   display: none;
@@ -499,17 +507,17 @@ header {
   float: left;
   margin-right: 5%; }
   .hold-researcher .photo {
-    width: 90%;
+    width: 70%;
     height: auto;
-    padding-top: 90%;
-    border-radius: 90%;
+    padding-top: 70%;
+    border-radius: 70%;
     border-color: #000;
     border-width: 3px;
     border-style: solid;
     overflow: hidden;
     text-align: center;
     position: relative;
-    float: left;
+    margin: 0 auto;
     margin-bottom: 10px; }
     .hold-researcher .photo img {
       width: 580px;

@@ -6,6 +6,8 @@
 	<link rel="stylesheet" href="css/libs/cartodb/cartodb.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.3/mapbox-gl.js'></script>
+    
 </head>
 <body>
 	<header>
@@ -71,11 +73,10 @@
 			</div>
 
 			<div id="tooltip" class="hidden">
-			  <p id="title"></p>
+			  <h5 id="title"><a href="" id="paper_link"></a></h5>
 			  <p id="subject"></p>
 			  <p id="microorganism"></p>
 			  <p id="type_of_sample_habitat"></p>
-			  <a href="" id="paper_link">Link para paper</a>
 			</div>
 			
 			<div id='map'></div>
@@ -104,6 +105,7 @@
 
 	<!-- include cartodb.js library -->
     <script src='js/libs/mapbox/mapbox.js'></script>
+    <script src="http://cdn.leafletjs.com/leaflet-0.5/leaflet.js"></script>
 	<script src="js/libs/cartodb/cartodb.js"></script>
 
     <script src="js/main_map.js"></script>
